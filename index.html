@@ -27,7 +27,7 @@
         <section class="paper-section">
             <h2>Meus Projetos</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-url="https://nathybviana.pythonanywhere.com/">
                     <h3>Projeto Plataforma de Estudo</h3>
                     <p>Fiz uma interface simples para que todos possam usar facilmente. A plataforma é fácil de entender e tem ferramentas que acompanham o progresso para ajudar no aprendizado.</p>
                     <div class="tags">
@@ -38,9 +38,9 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <h3></h3>
-                    <p></p>
+                <div class="project-card" data-url="https://seuoutroprojeto.com">
+                    <h3>Meu Segundo Projeto</h3>
+                    <p>Descrição do segundo projeto.</p>
                     <div class="tags">
                         <span class="tag"></span>
                         <span class="tag"></span>
@@ -71,5 +71,16 @@
             </div>
         </footer>
     </div>
+    <script>
+        // Adiciona clique nos cards de projeto
+        document.querySelectorAll('.project-card').forEach(card => {
+            const url = card.getAttribute('data-url');
+            if (url) {
+                card.addEventListener('click', () => {
+                    window.open(url, '_blank');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
