@@ -2,7 +2,7 @@
 
 # ✨ Portfólio Profissional
 
-### 💼 Natália Berbet Viana
+### 💼 Natalia Berbet Viana
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Ativo-success?style=for-the-badge" alt="Status">
@@ -200,7 +200,7 @@ Este projeto está sob a licença MIT. Sinta-se livre para usar como inspiraçã
 
 ### ⭐ Se você gostou deste projeto, deixe uma estrela!
 
-**Feito com 💜 por [Natália Berbet Viana](https://github.com/nataliaberbetviana)**
+**Feito com 💜 por [Natalia Berbet Viana](https://github.com/nataliaberbetviana)**
 
 <sub>Última atualização: Outubro 2025</sub>
 
