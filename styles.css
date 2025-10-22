@@ -27,8 +27,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
+    background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
     pointer-events: none;
     z-index: 1;
 }
@@ -47,9 +47,9 @@ header {
     border: 3px solid #e6d5dc;
     border-radius: 15px 15px 0 0;
     padding: 40px;
-    box-shadow: 
-        0 10px 30px rgba(230, 213, 220, 0.3),
-        inset 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow:
+            0 10px 30px rgba(230, 213, 220, 0.3),
+            inset 0 1px 0 rgba(255,255,255,0.5);
     position: relative;
     margin-bottom: 30px;
     animation: slideDown 0.8s ease-out;
@@ -112,9 +112,9 @@ h1 {
     border-left: 20px solid #f5e5ec;
     padding: 40px;
     margin-bottom: 30px;
-    box-shadow: 
-        5px 5px 15px rgba(230, 213, 220, 0.2),
-        inset 0 0 50px rgba(245, 229, 236, 0.05);
+    box-shadow:
+            5px 5px 15px rgba(230, 213, 220, 0.2),
+            inset 0 0 50px rgba(245, 229, 236, 0.05);
     position: relative;
     animation: fadeInUp 0.6s ease-out backwards;
 }
@@ -142,10 +142,10 @@ h1 {
     bottom: 0;
     width: 2px;
     background: repeating-linear-gradient(
-        transparent,
-        transparent 25px,
-        #f5e5ec 25px,
-        #f5e5ec 27px
+            transparent,
+            transparent 25px,
+            #f5e5ec 25px,
+            #f5e5ec 27px
     );
 }
 
@@ -342,16 +342,193 @@ footer {
     51%, 100% { border-right: 3px solid transparent; }
 }
 
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2.8em;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Smartphones e dispositivos pequenos */
 @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    header {
+        padding: 25px 20px;
+        border-radius: 10px 10px 0 0;
+    }
+
     h1 {
         font-size: 2em;
+        letter-spacing: 1px;
+        animation: none; /* Remove animação typewriter em mobile */
+        width: 100%;
+        white-space: normal;
     }
-    
+
+    .subtitle {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .paper-section {
+        padding: 25px 15px;
+        border-left-width: 10px;
+        margin-bottom: 20px;
+    }
+
+    .paper-section::before {
+        left: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding-left: 15px;
+    }
+
+    .content {
+        padding-left: 15px;
+        font-size: 1em;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding-left: 15px;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.2em;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px) rotate(0deg);
+    }
+
+    .tags {
+        gap: 8px;
+    }
+
+    .tag {
+        font-size: 0.8em;
+        padding: 4px 10px;
+    }
+
+    footer {
+        padding: 25px 15px;
+    }
+
+    .stamp {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .contact-links a {
+        padding: 12px 20px;
+        text-align: center;
+    }
+
+    .contact-links a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .paper-section {
+        padding: 20px 12px;
+    }
+
+    .content {
+        padding-left: 12px;
+        font-size: 0.95em;
+    }
+
+    .projects-grid {
+        padding-left: 12px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .tag {
+        font-size: 0.75em;
+        padding: 3px 8px;
+    }
+}
+
+/* Landscape mode em smartphones */
+@media (max-width: 768px) and (orientation: landscape) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    header {
+        padding: 20px;
+    }
+
     .paper-section {
         padding: 20px;
     }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
+}
+
+/* Telas grandes */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+
+    .content {
+        font-size: 1.15em;
     }
 }
