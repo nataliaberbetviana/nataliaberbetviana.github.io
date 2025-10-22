@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Simples - Natalia Berbet Viana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="back-button">← Voltar ao Portfólio</a>
+
+    <div class="project-header">
+        <h1 class="project-title">🔐 Gerador de Senhas Simples</h1>
+        <p class="project-description">
+            Um projeto Python que demonstra boas práticas de programação com geração aleatória de senhas seguras
+        </p>
+
+        <div class="project-links">
+            <a href="https://github.com/nataliaberbetviana/gerador-de-senhas-simples" target="_blank" class="project-btn primary">
+                📂 Ver no GitHub
+            </a>
+            <a href="https://github.com/nataliaberbetviana/gerador-de-senhas-simples/archive/refs/heads/main.zip" class="project-btn">
+                ⬇️ Download
+            </a>
+        </div>
+
+        <div class="tech-badges">
+            <span class="badge">🐍 Python</span>
+            <span class="badge">🧪 Pytest</span>
+            <span class="badge">🔀 Random</span>
+            <span class="badge">📝 String</span>
+        </div>
+    </div>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">📖</span>Sobre o Projeto</h2>
+        <div class="content">
+            <p>Este é um mini-projeto em Python que demonstra o uso de <strong>funções, loops, condicionais e manipulação de strings</strong>. O programa solicita ao usuário o tamanho desejado para a senha e, em seguida, gera uma senha aleatória usando letras, números e caracteres especiais.</p>
+
+            <div class="highlight-box">
+                <strong>🎯 Objetivo Educacional:</strong> Demonstrar conceitos fundamentais de programação Python através de um projeto prático e útil.
+            </div>
+
+            <h3 class="subsection-title">✨ Características Principais</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔒 Senhas Seguras</h4>
+                    <p>Gera senhas com letras maiúsculas, minúsculas, números e caracteres especiais</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎲 Aleatoriedade</h4>
+                    <p>Cada senha gerada é única e imprevisível</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>✅ Validação</h4>
+                    <p>Tratamento de erros para entradas inválidas</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🧪 Testes</h4>
+                    <p>Suite completa de testes com Pytest</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">💻</span>Como Usar</h2>
+        <div class="content">
+            <h3 style="color: #6b4456; font-family: 'Special Elite', cursive;">1. Clone o Repositório</h3>
+            <div class="code-block">
+                git clone git@github.com:nataliaberbetviana/gerador-de-senhas-simples.git
+            </div>
+
+            <h3 class="subsection-title">2. Navegue até a Pasta</h3>
+            <div class="code-block">
+                cd gerador-de-senhas-simples
+            </div>
+
+            <h3 class="subsection-title">3. Execute o Script</h3>
+            <div class="code-block">
+                python gerador.py
+            </div>
+
+            <h3 class="subsection-title">4. Siga as Instruções</h3>
+            <div class="code-block">
+                Digite o tamanho da senha desejada: <span class="string">12</span>
+                O número de caracteres é: <span class="string">12</span>
+                A senha gerada é: <span class="string">aB3$xY9#mK2!</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🧪</span>Executando os Testes</h2>
+        <div class="content">
+            <p>O projeto inclui uma suite completa de testes usando <strong>Pytest</strong>:</p>
+
+            <h3 class="subsection-title">Instalar Pytest</h3>
+            <div class="code-block">
+                pip install pytest
+            </div>
+
+            <h3 class="subsection-title">Executar Testes</h3>
+            <div class="code-block">
+                pytest
+            </div>
+
+            <div class="highlight-box">
+                <strong>📋 Plano de Testes:</strong> O projeto inclui documentação detalhada dos testes realizados.
+                <a href="https://github.com/nataliaberbetviana/gerador-de-senhas-simples/blob/main/plano_de_testes.md" target="_blank" style="color: #6b4456; font-weight: bold;">Ver Plano de Testes →</a>
+            </div>
+
+            <h3 style="color: #6b4456; margin-top: 30px; font-family: 'Special Elite', cursive;">🔍 Testes Implementados</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📏 Comprimento</h4>
+                    <p>Verifica se a senha tem o tamanho correto solicitado pelo usuário</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎲 Aleatoriedade</h4>
+                    <p>Garante que senhas diferentes são geradas a cada execução</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>✔️ Conteúdo Válido</h4>
+                    <p>Confirma que apenas caracteres permitidos são usados</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🌈 Diversidade</h4>
+                    <p>Assegura que a senha contém diferentes tipos de caracteres</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">⚙️</span>Estrutura do Código</h2>
+        <div class="content">
+            <p>O projeto está organizado de forma clara e modular:</p>
+
+            <h3 class="subsection-title">📁 Estrutura de Arquivos</h3>
+            <div class="code-block">
+                gerador-de-senhas-simples/
+                ├── .gitignore
+                ├── README.md
+                ├── gerador.py              <span class="comment"># Código principal</span>
+                ├── test_gerador.py         <span class="comment"># Testes automatizados</span>
+                └── plano_de_testes.md      <span class="comment"># Documentação dos testes</span>
+            </div>
+
+            <h3 class="subsection-title">🔧 Função Principal</h3>
+            <div class="code-block">
+                <span class="keyword">def</span> <span class="function">gerar_senha</span>(quantidade_de_caracteres):
+                <span class="comment"># Conjunto de caracteres disponíveis</span>
+                caracteres_disponiveis = string.ascii_letters + string.digits + string.punctuation
+
+                senha_final = <span class="string">""</span>
+
+                <span class="comment"># Loop para construir a senha</span>
+                <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="function">range</span>(quantidade_de_caracteres):
+                caractere_sorteado = random.<span class="function">choice</span>(caracteres_disponiveis)
+                senha_final += caractere_sorteado
+
+                <span class="keyword">return</span> senha_final
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🛠️</span>Tecnologias Utilizadas</h2>
+        <div class="content">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🐍 Python</h4>
+                    <p>Linguagem de programação principal do projeto</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📝 String Module</h4>
+                    <p>Para conjuntos de caracteres pré-definidos</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎲 Random Module</h4>
+                    <p>Para geração de valores aleatórios</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🧪 Pytest</h4>
+                    <p>Framework de testes automatizados</p>
+                </div>
+            </div>
+
+            <h3 style="color: #6b4456; margin-top: 30px; font-family: 'Special Elite', cursive;">📚 Conceitos Demonstrados</h3>
+            <ul style="line-height: 2; color: #8b6575;">
+                <li><strong>Funções:</strong> Modularização e reusabilidade de código</li>
+                <li><strong>Loops:</strong> Iteração com <code>for</code> e <code>while</code></li>
+                <li><strong>Condicionais:</strong> Validação e tratamento de erros</li>
+                <li><strong>Manipulação de Strings:</strong> Concatenação e operações</li>
+                <li><strong>Testes Automatizados:</strong> Garantia de qualidade com Pytest</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">👤</span>Sobre a Desenvolvedora</h2>
+        <div class="content">
+            <p>Olá! Meu nome é <strong>Natalia</strong> e este repositório é um registro dos meus estudos em Python.</p>
+
+            <div class="highlight-box">
+                <p>Este projeto faz parte da minha jornada de aprendizado em programação, focando em <strong>boas práticas</strong>, <strong>código limpo</strong> e <strong>testes automatizados</strong>.</p>
+            </div>
+
+            <p style="margin-top: 20px;">Você pode acompanhar mais projetos e entrar em contato:</p>
+
+            <div class="contact-links">
+
+                <div class="contact-links" style="margin-top: 20px;">
+                    <a href="https://www.linkedin.com/in/nataliaberbetviana/">LinkedIn</a>
+                    <a href="https://github.com/nataliaberbetviana">GitHub</a>
+                    <a href="mailto:nabevia@gmail.com">Email</a>
+                </div>
+            </div>
+    </section>
+
+    <footer>
+        <div class="stamp">
+            ✉ ENTRE EM CONTATO
+        </div>
+        <p>Gostou do projeto? Vamos conversar!</p>
+        <div class="contact-links">
+            <a href="mailto:nabevia@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/nataliaberbetviana/">LinkedIn</a>
+            <a href="https://github.com/nataliaberbetviana">GitHub</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
