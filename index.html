@@ -8,79 +8,143 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Natalia Berbet Viana</h1>
-            <p class="subtitle">Desenvolvedor • Analista de Dados • Cientista de Dados</p>
-        </header>
+<div class="container">
+    <header>
+        <h1>Natalia Berbet Viana</h1>
+        <p class="subtitle">Desenvolvedor • Analista de Dados • Cientista de Dados</p>
 
-        <section class="paper-section">
-            <h2>Sobre Mim</h2>
-            <div class="content">
-                <p>Olá! Sou uma profissional apaixonada por criar experiências digitais únicas. Transformo ideias em realidade através de código limpo e interfaces intuitivas.</p>
-                <br>
-                <p>Minha jornada começou com curiosidade e evoluiu para uma carreira dedicada à inovação tecnológica, com um foco recente e profundo em <b>Análise de Dados e Ciência de Dados (Data Science)</b>.</p>
-                <p>Agora, além de criar, eu <strong>analiso os dados de uso e comportamento</strong> para otimizar a experiência do usuário e guiar a <strong>tomada de decisões estratégicas</strong>. Eu combino a visão do design com o poder dos dados.</p>
+        <!-- Contadores -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-icon">👁️</span>
+                <span class="stat-label">Visualizações</span>
+                <span class="stat-value" id="viewCount">...</span>
             </div>
-        </section>
+            <div class="stat-box">
+                <span class="stat-icon">📅</span>
+                <span class="stat-label">Última Edição</span>
+                <span class="stat-value" id="lastEdit">Out 2025</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">🕐</span>
+                <span class="stat-label">Sua Última Visita</span>
+                <span class="stat-value" id="lastVisit">...</span>
+            </div>
+        </div>
+    </header>
 
-        <section class="paper-section">
-            <h2>Meus Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-url="https://nathybviana.pythonanywhere.com/">
-                    <h3>Projeto Plataforma de Estudo</h3>
-                    <p>Fiz uma interface simples para que todos possam usar facilmente. A plataforma é fácil de entender e tem ferramentas que acompanham o progresso para ajudar no aprendizado.</p>
-                    <div class="tags">
-                        <span class="tag">CSS</span>
-                        <span class="tag">HTML5</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
+    <section class="paper-section">
+        <h2>Sobre Mim</h2>
+        <div class="content">
+            <p>Olá! Sou uma profissional apaixonada por criar experiências digitais únicas. Transformo ideias em realidade através de código limpo e interfaces intuitivas.</p>
+            <br>
+            <p>Minha jornada começou com curiosidade e evoluiu para uma carreira dedicada à inovação tecnológica, com um foco recente e profundo em <b>Análise de Dados e Ciência de Dados (Data Science)</b>.</p>
+            <p>Agora, além de criar, eu <strong>analiso os dados de uso e comportamento</strong> para otimizar a experiência do usuário e guiar a <strong>tomada de decisões estratégicas</strong>. Eu combino a visão do design com o poder dos dados.</p>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2>Meus Projetos</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-url="https://nathybviana.pythonanywhere.com/">
+                <h3>Projeto Plataforma de Estudo</h3>
+                <p>Fiz uma interface simples para que todos possam usar facilmente. A plataforma é fácil de entender e tem ferramentas que acompanham o progresso para ajudar no aprendizado.</p>
+                <div class="tags">
+                    <span class="tag">CSS</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">JavaScript</span>
                 </div>
+            </div>
 
-                <div class="project-card" data-url="https://seuoutroprojeto.com">
-                    <h3>Meu Segundo Projeto</h3>
-                    <p>Descrição do segundo projeto.</p>
-                    <div class="tags">
-                        <span class="tag"></span>
-                        <span class="tag"></span>
-                    </div>
+            <div class="project-card" data-url="https://seuoutroprojeto.com">
+                <h3>Meu Segundo Projeto</h3>
+                <p>Descrição do segundo projeto.</p>
+                <div class="tags">
+                    <span class="tag"></span>
+                    <span class="tag"></span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="paper-section">
-            <h2>Habilidades</h2>
-            <div class="content">
-                <p><strong>Front-end:</strong> HTML, CSS, JavaScript</p>
-                <p><strong>Back-end:</strong> Python</p>
-                <p><strong>Banco de Dados:</strong> SQL, R, Pandas, Numpy</p>
-                <p><strong>Ferramentas:</strong> Git, Docker, VS Code, Jupyter, Neo4J, RStudio</p>
-            </div>
-        </section>
+    <section class="paper-section">
+        <h2>Habilidades</h2>
+        <div class="content">
+            <p><strong>Front-end:</strong> HTML, CSS, JavaScript</p>
+            <p><strong>Back-end:</strong> Python</p>
+            <p><strong>Banco de Dados:</strong> SQL, R, Pandas, Numpy</p>
+            <p><strong>Ferramentas:</strong> Git, Docker, VS Code, Jupyter, Neo4J, RStudio</p>
+        </div>
+    </section>
 
-        <footer>
-            <div class="stamp">
-                ✉ ENTRE EM CONTATO
-            </div>
-            <p>Vamos criar algo incrível juntos?</p>
-            <div class="contact-links">
-                <a href="mailto:nabevia@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/nataliaberbetviana/">LinkedIn</a>
-                <a href="https://github.com/nataliaberbetviana">GitHub</a>
-            </div>
-        </footer>
-    </div>
-    <script>
-        // Adiciona clique nos cards de projeto
-        document.querySelectorAll('.project-card').forEach(card => {
-            const url = card.getAttribute('data-url');
-            if (url) {
-                card.addEventListener('click', () => {
-                    window.open(url, '_blank');
-                });
-            }
-        });
-    </script>
+    <footer>
+        <div class="stamp">
+            ✉ ENTRE EM CONTATO
+        </div>
+        <p>Vamos criar algo incrível juntos?</p>
+        <div class="contact-links">
+            <a href="mailto:nabevia@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/nataliaberbetviana/">LinkedIn</a>
+            <a href="https://github.com/nataliaberbetviana">GitHub</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Sistema de contadores
+    (function() {
+        // Função para formatar data
+        function formatDate(date) {
+            const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+                'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+            const day = date.getDate();
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+
+            return `${day} ${month} ${year} ${hours}:${minutes}`;
+        }
+
+        // Incrementar contador de visualizações
+        let viewCount = localStorage.getItem('portfolioViewCount') || 0;
+        viewCount = parseInt(viewCount) + 1;
+        localStorage.setItem('portfolioViewCount', viewCount);
+        document.getElementById('viewCount').textContent = viewCount;
+
+        // Última visita
+        const lastVisitStr = localStorage.getItem('portfolioLastVisit');
+        const lastVisitElement = document.getElementById('lastVisit');
+
+        if (lastVisitStr) {
+            const lastVisitDate = new Date(lastVisitStr);
+            lastVisitElement.textContent = formatDate(lastVisitDate);
+        } else {
+            lastVisitElement.textContent = 'Primeira visita! 🎉';
+        }
+
+        // Salvar data/hora atual como última visita
+        localStorage.setItem('portfolioLastVisit', new Date().toISOString());
+
+        // Data da última edição (você pode atualizar essa data manualmente)
+        const lastEditDate = new Date('2025-10-22'); // Atualize esta data quando modificar o site
+        document.getElementById('lastEdit').textContent =
+            lastEditDate.getDate() + ' ' +
+            ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+                'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'][lastEditDate.getMonth()] + ' ' +
+            lastEditDate.getFullYear();
+    })();
+
+    // Clique nos cards de projeto
+    document.querySelectorAll('.project-card').forEach(card => {
+        const url = card.getAttribute('data-url');
+        if (url) {
+            card.addEventListener('click', () => {
+                window.open(url, '_blank');
+            });
+        }
+    });
+</script>
 </body>
 </html>
