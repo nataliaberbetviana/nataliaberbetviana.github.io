@@ -147,10 +147,10 @@ Para adaptar este portfólio para você:
 <div align="center">
 
 ### 🖥️ Desktop
-![Portfolio Preview](https://via.placeholder.com/800x400/f5e5ec/6b4456?text=Adicione+um+screenshot+aqui)
+<img src="/img/visao-computador.png" alt="Desktop Preview" width="300">)
 
 ### 📱 Mobile
-<img src="https://via.placeholder.com/300x600/f5e5ec/6b4456?text=Screenshot+Mobile" alt="Mobile Preview" width="300">
+<img src="img/visao_smartphone.jpeg" alt="Mobile Preview" width="300">
 
 </div>
 
