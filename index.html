@@ -187,28 +187,31 @@
             return `${day} ${month} ${year} ${hours}:${minutes}`;
         }
 
-        // Contador global de visualizações
+        // --- NOVO CÓDIGO PARA VISUALIZAÇÕES GLOBAIS (CountAPI) ---
 
 
-        const GLOBAL_HITS_API = "https://hits.sh/nataliaberbetviana.github.io.svg";
+        const DOMAIN_KEY = "nataliaberbetviana.github.io";
+
+        // Esta URL fará o HIT (incrementa +1) e retorna o valor atualizado.
+        const GLOBAL_HITS_API = `https://api.countapi.xyz/hit/${DOMAIN_KEY}/visits`;
 
         fetch(GLOBAL_HITS_API)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Falha ao carregar o contador. Status: ' + response.status);
+                    throw new Error(`Falha API. Status: ${response.status}`);
                 }
                 return response.json();
             })
             .then(data => {
-// Atualiza o elemento com o número de visualizações
+                // O CountAPI retorna o total no campo 'value'.
                 document.getElementById('viewCount').textContent = data.value || 0;
             })
             .catch(error => {
+                document.getElementById('viewCount').textContent = `Erro API: ${error.message}`;
                 console.error('Erro ao buscar contador global:', error);
-                document.getElementById('viewCount').textContent = 'API Indisp.';
             });
 
-
+        // --- FIM NOVO CÓDIGO ---
 
         // Última visita (MANTIDA: Usa localStorage, pois é individual para o usuário)
         const lastVisitStr = localStorage.getItem('portfolioLastVisit');
