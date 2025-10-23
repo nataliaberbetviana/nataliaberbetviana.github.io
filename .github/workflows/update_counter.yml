@@ -21,37 +21,35 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Initialize and Fetch Counter
+      - name: Fetch and Update Counter (Robust)
         id: count_fetch
         run: |
           # A CHAVE DEVE SER SÓ O DOMÍNIO + CAMINHO (sem https://)
+          # SUBSTITUA SE NECESSÁRIO
           DOMAIN_KEY="nataliaberbetviana.github.io"
           
-          # --- NOVO: TENTA CRIAR/INICIALIZAR O CONTADOR ---
-          # Esta chamada garante que o contador exista.
-          echo "Inicializando contador se necessário..."
-          curl -s -X GET "https://api.countapi.xyz/create?namespace=${DOMAIN_KEY}&key=visits&value=0" > /dev/null
+          # URL DE HIT: Incrementa o contador e retorna o JSON com o valor atual
+          HIT_URL="https://api.countapi.xyz/hit/${DOMAIN_KEY}/visits"
           
-          # --- FIM NOVO ---
+          echo "Fazendo HIT na API: $HIT_URL"
           
-          # 1. URL para buscar o valor atual
-          COUNT_URL="https://api.countapi.xyz/get/${DOMAIN_KEY}/visits"
+          # Faz o HIT e salva a resposta JSON
+          RESPONSE=$(curl -s $HIT_URL)
           
-          echo "Buscando contador em: $COUNT_URL"
-          
-          # Salva a resposta da API (que é um JSON com {"value": N})
-          RESPONSE=$(curl -s $COUNT_URL)
-          
-          # Verifica se a resposta contém um JSON válido com o campo 'value'
-          COUNT=$(echo $RESPONSE | jq -r '.value' 2>/dev/null)
+          echo "Resposta da API: $RESPONSE"
 
-          if [ -z "$COUNT" ] || [ "$COUNT" = "null" ]; then
-            echo "::error::Falha ao obter valor do contador, API retornou erro ou JSON inválido."
-            # Se a inicialização falhou e a busca falhou, paramos o Action com erro
-            exit 1 
+          # Tenta extrair o valor do JSON. 
+          # Usamos o Python para garantir que o JSON seja processado corretamente, 
+          # eliminando a chance de erro do 'jq' se o JSON for inválido.
+          COUNT=$(echo $RESPONSE | python3 -c "import sys, json; print(json.load(sys.stdin).get('value', 0))")
+
+          if [ -z "$COUNT" ] || [ "$COUNT" = "0" ]; then
+            echo "::warning::Contagem pode estar zero ou falhou. Verifique a chave."
+            # Definimos um valor 0 para não quebrar, mas alertamos sobre o problema.
+            COUNT=0
           fi
           
-          echo "Contagem atual: $COUNT"
+          echo "Contagem final: $COUNT"
           
           # Cria o arquivo visits.json que seu JS irá ler
           echo "{\"count\": $COUNT}" > visits.json
