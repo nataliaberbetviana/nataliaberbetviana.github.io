@@ -26,7 +26,7 @@ jobs:
         run: |
           # A CHAVE DEVE SER SÓ O DOMÍNIO + CAMINHO (sem https://)
           # SUBSTITUA SE NECESSÁRIO
-          DOMAIN_KEY="nataliaberbetviana.github.io"
+          DOMAIN_KEY="nataliaberbetvianagithubio"
           
           # URL DE HIT: Incrementa o contador e retorna o JSON com o valor atual
           HIT_URL="https://api.countapi.xyz/hit/${DOMAIN_KEY}/visits"
