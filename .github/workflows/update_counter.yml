@@ -1,6 +1,6 @@
 # .github/workflows/update_counter.yml
 
-name: Update Visit Counter
+name: Update Visit Counter (Hits.sh)
 
 on:
   push:
@@ -21,31 +21,27 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Fetch and Update Counter (Robust)
+      - name: Fetch and Update Counter (Hits.sh)
         id: count_fetch
         run: |
-          # A CHAVE DEVE SER SÓ O DOMÍNIO + CAMINHO (sem https://)
-          # SUBSTITUA SE NECESSÁRIO
-          DOMAIN_KEY="nataliaberbetvianagithubio"
+          # A CHAVE DEVE SER SÓ O DOMÍNIO + CAMINHO (ex: nataliaberbetviana.github.io)
+          DOMAIN_KEY="nataliaberbetviana.github.io" 
           
-          # URL DE HIT: Incrementa o contador e retorna o JSON com o valor atual
-          HIT_URL="https://api.countapi.xyz/hit/${DOMAIN_KEY}/visits"
+          # URL DE HIT: Essa URL registra o hit e retorna o JSON com o valor.
+          HIT_URL="http://hits.sh/${DOMAIN_KEY}.json" # Usando HTTP para evitar bloqueios, como na tentativa anterior
           
-          echo "Fazendo HIT na API: $HIT_URL"
+          echo "Fazendo HIT na API (hits.sh): $HIT_URL"
           
           # Faz o HIT e salva a resposta JSON
           RESPONSE=$(curl -s $HIT_URL)
           
           echo "Resposta da API: $RESPONSE"
 
-          # Tenta extrair o valor do JSON. 
-          # Usamos o Python para garantir que o JSON seja processado corretamente, 
-          # eliminando a chance de erro do 'jq' se o JSON for inválido.
+          # Tenta extrair o valor do JSON. O hits.sh retorna no campo 'value'.
           COUNT=$(echo $RESPONSE | python3 -c "import sys, json; print(json.load(sys.stdin).get('value', 0))")
 
           if [ -z "$COUNT" ] || [ "$COUNT" = "0" ]; then
             echo "::warning::Contagem pode estar zero ou falhou. Verifique a chave."
-            # Definimos um valor 0 para não quebrar, mas alertamos sobre o problema.
             COUNT=0
           fi
           
@@ -58,5 +54,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_files: visits.json 
-          commit_message: "chore(ci): Atualiza contador de visualizações (Automático)"
+          commit_message: "chore(ci): Atualiza contador de visualizações (Automático - Hits.sh)"
           commit_author: GitHub Actions <actions@github.com>
