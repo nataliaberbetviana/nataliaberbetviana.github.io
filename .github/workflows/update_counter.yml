@@ -2,35 +2,39 @@
 
 name: Update Visit Counter
 
-# Define quando este workflow deve rodar:
 on:
   push:
     branches:
       - main # OU o nome da sua branch principal (master/main)
   schedule:
-    # Roda uma vez por dia (meia-noite UTC)
     - cron: '0 0 * * *'
-  workflow_dispatch: # Permite rodar o workflow manualmente
+  workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # É crucial fazer o checkout de todos os commits para pegar o token
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Fetch and Update Counter
+      - name: Initialize and Fetch Counter
         id: count_fetch
-        # Este comando usa CURL para chamar a API e salva a resposta JSON em uma variável
         run: |
+          # A CHAVE DEVE SER SÓ O DOMÍNIO + CAMINHO (sem https://)
           DOMAIN_KEY="nataliaberbetviana.github.io"
           
-          # Pede o valor atual da API (não incrementa, apenas pega o valor)
+          # --- NOVO: TENTA CRIAR/INICIALIZAR O CONTADOR ---
+          # Esta chamada garante que o contador exista.
+          echo "Inicializando contador se necessário..."
+          curl -s -X GET "https://api.countapi.xyz/create?namespace=${DOMAIN_KEY}&key=visits&value=0" > /dev/null
+          
+          # --- FIM NOVO ---
+          
+          # 1. URL para buscar o valor atual
           COUNT_URL="https://api.countapi.xyz/get/${DOMAIN_KEY}/visits"
           
           echo "Buscando contador em: $COUNT_URL"
@@ -38,14 +42,12 @@ jobs:
           # Salva a resposta da API (que é um JSON com {"value": N})
           RESPONSE=$(curl -s $COUNT_URL)
           
-          # Extrai o número de visualizações do JSON
-          COUNT=$(echo $RESPONSE | jq -r '.value')
+          # Verifica se a resposta contém um JSON válido com o campo 'value'
+          COUNT=$(echo $RESPONSE | jq -r '.value' 2>/dev/null)
 
           if [ -z "$COUNT" ] || [ "$COUNT" = "null" ]; then
-            echo "::error::Falha ao obter valor do contador, CountAPI pode estar indisponível ou chave inválida."
-            # Tenta um valor padrão para não quebrar a página, mas falha o Action
-            COUNT=0
-            # Sair com erro para notificar que a API falhou
+            echo "::error::Falha ao obter valor do contador, API retornou erro ou JSON inválido."
+            # Se a inicialização falhou e a busca falhou, paramos o Action com erro
             exit 1 
           fi
           
@@ -53,15 +55,10 @@ jobs:
           
           # Cria o arquivo visits.json que seu JS irá ler
           echo "{\"count\": $COUNT}" > visits.json
-
-        # O GitHub Actions exige o utilitário jq para processar JSON.
-        # Ele já está instalado no ambiente 'ubuntu-latest'.
-
+        
       - name: Commit and Push new visits.json
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          # Comita apenas o arquivo visits.json
-          commit_files: visits.json
+          commit_files: visits.json 
           commit_message: "chore(ci): Atualiza contador de visualizações (Automático)"
-          # Define o usuário que fará o commit automático
           commit_author: GitHub Actions <actions@github.com>
