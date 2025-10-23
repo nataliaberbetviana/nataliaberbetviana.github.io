@@ -131,30 +131,30 @@
                     <a href="/img/cloud-simulearn.png" alt = 'certificado-simulearn' class="cert-link" target="_blank">Ver Credencial →</a>
                 </div>
 
-<!--            <h3 class="subsection-title">🎖️ Badges & Conquistas</h3>-->
-<!--            <div class="badges-container">-->
-<!--                <div class="badge-item">-->
-<!--                    <span class="badge-icon">🏅</span>-->
-<!--                    <span class="badge-name">Badge Name</span>-->
-<!--                </div>-->
-<!--                <div class="badge-item">-->
-<!--                    <span class="badge-icon">⭐</span>-->
-<!--                    <span class="badge-name">Badge Name</span>-->
-<!--                </div>-->
-<!--                <div class="badge-item">-->
-<!--                    <span class="badge-icon">🎯</span>-->
-<!--                    <span class="badge-name">Badge Name</span>-->
-<!--                </div>-->
-<!--                <div class="badge-item">-->
-<!--                    <span class="badge-icon">💡</span>-->
-<!--                    <span class="badge-name">Badge Name</span>-->
-<!--                </div>-->
-<!--                <div class="badge-item">-->
-<!--                    <span class="badge-icon">🔥</span>-->
-<!--                    <span class="badge-name">Badge Name</span>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
+                <!--            <h3 class="subsection-title">🎖️ Badges & Conquistas</h3>-->
+                <!--            <div class="badges-container">-->
+                <!--                <div class="badge-item">-->
+                <!--                    <span class="badge-icon">🏅</span>-->
+                <!--                    <span class="badge-name">Badge Name</span>-->
+                <!--                </div>-->
+                <!--                <div class="badge-item">-->
+                <!--                    <span class="badge-icon">⭐</span>-->
+                <!--                    <span class="badge-name">Badge Name</span>-->
+                <!--                </div>-->
+                <!--                <div class="badge-item">-->
+                <!--                    <span class="badge-icon">🎯</span>-->
+                <!--                    <span class="badge-name">Badge Name</span>-->
+                <!--                </div>-->
+                <!--                <div class="badge-item">-->
+                <!--                    <span class="badge-icon">💡</span>-->
+                <!--                    <span class="badge-name">Badge Name</span>-->
+                <!--                </div>-->
+                <!--                <div class="badge-item">-->
+                <!--                    <span class="badge-icon">🔥</span>-->
+                <!--                    <span class="badge-name">Badge Name</span>-->
+                <!--                </div>-->
+                <!--            </div>-->
+            </div>
     </section>
 
     <footer>
@@ -174,7 +174,7 @@
 <script>
     // Sistema de contadores
     (function() {
-        // Função para formatar data (Mantida)
+        // Função para formatar data
         function formatDate(date) {
             const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
                 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -187,33 +187,13 @@
             return `${day} ${month} ${year} ${hours}:${minutes}`;
         }
 
-        // --- NOVO CÓDIGO PARA VISUALIZAÇÕES GLOBAIS (CountAPI) ---
+        // Incrementar contador de visualizações
+        let viewCount = localStorage.getItem('portfolioViewCount') || 0;
+        viewCount = parseInt(viewCount) + 1;
+        localStorage.setItem('portfolioViewCount', viewCount);
+        document.getElementById('viewCount').textContent = viewCount;
 
-
-        const DOMAIN_KEY = "nataliaberbetviana.github.io";
-
-        // Esta URL fará o HIT (incrementa +1) e retorna o valor atualizado.
-        const GLOBAL_HITS_API = `https://api.countapi.xyz/hit/${DOMAIN_KEY}/visits`;
-
-        fetch(GLOBAL_HITS_API)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Falha API. Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                // O CountAPI retorna o total no campo 'value'.
-                document.getElementById('viewCount').textContent = data.value || 0;
-            })
-            .catch(error => {
-                document.getElementById('viewCount').textContent = `Erro API: ${error.message}`;
-                console.error('Erro ao buscar contador global:', error);
-            });
-
-        // --- FIM NOVO CÓDIGO ---
-
-        // Última visita (MANTIDA: Usa localStorage, pois é individual para o usuário)
+        // Última visita
         const lastVisitStr = localStorage.getItem('portfolioLastVisit');
         const lastVisitElement = document.getElementById('lastVisit');
 
@@ -227,8 +207,8 @@
         // Salvar data/hora atual como última visita
         localStorage.setItem('portfolioLastVisit', new Date().toISOString());
 
-        // Data da última edição (MANTIDA: Atualize a data aqui manualmente)
-        const lastEditDate = new Date('2025-10-22');
+        // Data da última edição (você pode atualizar essa data manualmente)
+        const lastEditDate = new Date('2025-10-22'); // Atualize esta data quando modificar o site
         document.getElementById('lastEdit').textContent =
             lastEditDate.getDate() + ' ' +
             ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
@@ -236,7 +216,7 @@
             lastEditDate.getFullYear();
     })();
 
-    // Clique nos cards de projeto (Mantido)
+    // Clique nos cards de projeto
     document.querySelectorAll('.project-card').forEach(card => {
         const url = card.getAttribute('data-url');
         if (url) {
