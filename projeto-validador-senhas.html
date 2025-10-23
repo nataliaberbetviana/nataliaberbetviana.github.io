@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Palavras - Natalia Berbet Viana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="back-button">← Voltar ao Portfólio</a>
+
+    <div class="project-header">
+        <h1 class="project-title">📊 Contador de Palavras</h1>
+        <p class="project-description">
+            Um script Python que lê arquivos de texto, conta palavras e salva o resultado automaticamente
+        </p>
+
+        <div class="project-links">
+            <a href="https://github.com/nataliaberbetviana/contagem-de-palavras-python" target="_blank" class="project-btn primary">
+                📂 Ver no GitHub
+            </a>
+            <a href="https://github.com/nataliaberbetviana/contagem-de-palavras-python/archive/refs/heads/main.zip" class="project-btn">
+                ⬇️ Download
+            </a>
+        </div>
+
+        <div class="tech-badges">
+            <span class="badge">🐍 Python</span>
+            <span class="badge">📄 File I/O</span>
+            <span class="badge">📝 String Processing</span>
+        </div>
+    </div>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">📖</span>Sobre o Projeto</h2>
+        <div class="content">
+            <p>Este é um projeto simples em Python com o objetivo de demonstrar habilidades fundamentais de programação. O script <strong>lê o conteúdo de um arquivo de texto</strong>, conta o número de palavras e <strong>salva o resultado em um novo arquivo</strong>.</p>
+
+            <div class="highlight-box">
+                <strong>🎯 Objetivo Educacional:</strong> Praticar conceitos básicos de manipulação de arquivos e lógica de programação.
+            </div>
+
+            <h3 class="subsection-title">✨ Funcionalidades</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📖 Leitura de Arquivo</h4>
+                    <p>Lê o conteúdo completo do arquivo entrada.txt</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🔢 Contagem Precisa</h4>
+                    <p>Processa o texto e conta o número exato de palavras</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>💾 Salvamento Automático</h4>
+                    <p>Salva o resultado em um arquivo saida.txt</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>✅ Feedback Visual</h4>
+                    <p>Exibe mensagem de sucesso no terminal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">💻</span>Como Usar</h2>
+        <div class="content">
+            <h3 class="subsection-title">1. Clone o Repositório</h3>
+            <div class="code-block">
+                git clone git@github.com:nataliaberbetviana/contagem-de-palavras-python.git
+            </div>
+
+            <h3 class="subsection-title">2. Navegue até a Pasta</h3>
+            <div class="code-block">
+                cd contagem-de-palavras-python
+            </div>
+
+            <h3 class="subsection-title">3. Crie o Arquivo de Entrada</h3>
+            <p>Crie um arquivo chamado <code>entrada.txt</code> na pasta do projeto e adicione o texto que você deseja contar.</p>
+            <div class="code-block">
+                Este é um pequeno exemplo de texto para verificar
+                a funcionalidade do contador de palavras.
+            </div>
+
+            <h3 class="subsection-title">4. Execute o Script</h3>
+            <div class="code-block">
+                python contador-palavras.py
+            </div>
+
+            <h3 class="subsection-title">5. Verifique o Resultado</h3>
+            <div class="code-block">
+                Contagem de palavras concluída com sucesso se a contagem for de <span class="string">21</span> palavras!
+            </div>
+
+            <div class="highlight-box" style="margin-top: 20px;">
+                <strong>📄 Arquivo de Saída (saida.txt):</strong>
+                <div class="code-block" style="margin-top: 10px;">
+                    O número de palavras é: <span class="string">21</span>!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">⚙️</span>Estrutura do Código</h2>
+        <div class="content">
+            <h3 class="subsection-title">📁 Estrutura de Arquivos</h3>
+            <div class="code-block">
+                contagem-de-palavras-python/
+                ├── .gitignore
+                ├── README.md
+                ├── contador-palavras.py    <span class="comment"># Script principal</span>
+                ├── entrada.txt             <span class="comment"># Arquivo de entrada (você cria)</span>
+                └── saida.txt               <span class="comment"># Arquivo gerado automaticamente</span>
+            </div>
+
+            <h3 class="subsection-title">🔧 Função Principal</h3>
+            <div class="code-block">
+                <span class="comment"># Define a função para contar palavras</span>
+                <span class="keyword">def</span> <span class="function">contar_palavras</span>(texto):
+                <span class="comment"># Divide o texto em uma lista de palavras</span>
+                palavras = texto.<span class="function">split</span>()
+                <span class="comment"># Retorna a quantidade de palavras</span>
+                <span class="keyword">return</span> <span class="function">len</span>(palavras)
+            </div>
+
+            <h3 class="subsection-title">📖 Leitura e Escrita de Arquivos</h3>
+            <div class="code-block">
+                <span class="comment"># Lê o arquivo de entrada</span>
+                <span class="keyword">with</span> <span class="function">open</span>(<span class="string">'entrada.txt'</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> entrada:
+                texto = entrada.<span class="function">read</span>()
+
+                <span class="comment"># Conta as palavras</span>
+                total_de_palavras = <span class="function">contar_palavras</span>(texto)
+
+                <span class="comment"># Escreve o resultado no arquivo de saída</span>
+                <span class="keyword">with</span> <span class="function">open</span>(<span class="string">'saida.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> saida:
+                saida.<span class="function">write</span>(<span class="string">f'O número de palavras é: {total_de_palavras}!'</span>)
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🛠️</span>Tecnologias e Conceitos</h2>
+        <div class="content">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🐍 Python 3.x</h4>
+                    <p>Linguagem de programação principal</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📄 File I/O</h4>
+                    <p>Manipulação de arquivos de texto</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🔤 String Methods</h4>
+                    <p>Processamento de texto com split()</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📦 Git</h4>
+                    <p>Controle de versão do código</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">📚 Conceitos Demonstrados</h3>
+            <ul style="line-height: 2; color: #8b6575;">
+                <li><strong>Funções:</strong> Definição com <code>def</code> e uso de <code>return</code></li>
+                <li><strong>Manipulação de Arquivos:</strong> Abertura, leitura e escrita com <code>open()</code></li>
+                <li><strong>Context Managers:</strong> Uso de <code>with</code> para garantir fechamento de arquivos</li>
+                <li><strong>String Processing:</strong> Divisão de texto em palavras com <code>.split()</code></li>
+                <li><strong>F-strings:</strong> Formatação moderna de strings em Python</li>
+                <li><strong>Encoding:</strong> Tratamento correto de caracteres UTF-8</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">💡</span>Pré-requisitos</h2>
+        <div class="content">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🐍 Python 3.x</h4>
+                    <p>Versão 3 ou superior instalada no sistema</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📦 Git</h4>
+                    <p>Para clonar o repositório</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📝 Editor de Texto</h4>
+                    <p>Para criar o arquivo entrada.txt</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>💻 Terminal/CMD</h4>
+                    <p>Para executar os comandos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🎓</span>Aprendizados</h2>
+        <div class="content">
+            <p>Este projeto demonstra habilidades fundamentais de programação em Python, especialmente no que diz respeito à <strong>manipulação de arquivos</strong> e <strong>processamento de texto</strong>.</p>
+
+            <div class="highlight-box">
+                <p>Faz parte da minha jornada de aprendizado em tecnologia, mostrando comprometimento com o <strong>desenvolvimento prático</strong> e a aplicação de conceitos de programação em projetos reais.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="stamp">
+            ✉ ENTRE EM CONTATO
+        </div>
+        <p>Gostou do projeto? Vamos conversar!</p>
+        <div class="contact-links">
+            <a href="mailto:nabevia@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/nataliaberbetviana/">LinkedIn</a>
+            <a href="https://github.com/nataliaberbetviana">GitHub</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
