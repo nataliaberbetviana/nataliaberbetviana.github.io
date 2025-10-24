@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafo de Conhecimento DIO - Natalia Berbet Viana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="back-button">← Voltar ao Portfólio</a>
+
+    <div class="project-header">
+        <h1 class="project-title">🎬 Grafo de Conhecimento DIO</h1>
+        <p class="project-description">
+            Modelagem de dados com Neo4j para simulação de plataforma de streaming
+        </p>
+
+        <div class="project-links">
+            <a href="https://github.com/nataliaberbetviana/neo4j-movie-knowledge-graph" target="_blank" class="project-btn primary">
+                📂 Ver no GitHub
+            </a>
+            <a href="https://github.com/nataliaberbetviana/neo4j-movie-knowledge-graph/archive/refs/heads/main.zip" class="project-btn">
+                ⬇️ Download
+            </a>
+        </div>
+
+        <div class="tech-badges">
+            <span class="badge">🗄️ Neo4j</span>
+            <span class="badge">📊 Cypher</span>
+            <span class="badge">📈 Grafos</span>
+            <span class="badge">🔍 Análise de Dados</span>
+        </div>
+    </div>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">📖</span>Sobre o Projeto</h2>
+        <div class="content">
+            <p>Este projeto foi desenvolvido como desafio do <strong>Bootcamp Neo4j e Análise de Dados com Grafos</strong> pela <strong>DIO</strong>. Consiste na criação de um <strong>Grafo de Conhecimento</strong> que simula um serviço de streaming, modelando as relações complexas entre usuários, filmes, séries, atores, diretores e gêneros.</p>
+
+            <div class="highlight-box">
+                <strong>🎯 Objetivo do Desafio:</strong> Demonstrar domínio em modelagem de dados com grafos, criando um mínimo de 10 nós por entidade e estabelecendo relacionamentos significativos entre eles.
+            </div>
+
+            <h3 class="subsection-title">✨ Funcionalidades Principais</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>👥 Gestão de Usuários</h4>
+                    <p>Sistema completo de usuários com avaliações de filmes e séries</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎬 Catálogo de Mídia</h4>
+                    <p>Filmes e séries organizados por gêneros e relacionamentos</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎭 Elenco e Direção</h4>
+                    <p>Mapeamento de atores e diretores com seus papéis</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>💡 Sistema de Recomendação</h4>
+                    <p>Queries inteligentes baseadas em preferências e padrões</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">📊</span>Estatísticas do Projeto</h2>
+        <div class="content">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-icon">📈</span>
+                    <span class="stat-label">Total de Nós</span>
+                    <span class="stat-value">40</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">🔗</span>
+                    <span class="stat-label">Relacionamentos</span>
+                    <span class="stat-value">44</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">👥</span>
+                    <span class="stat-label">Usuários</span>
+                    <span class="stat-value">10</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">🎬</span>
+                    <span class="stat-label">Filmes</span>
+                    <span class="stat-value">8</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">📺</span>
+                    <span class="stat-label">Séries</span>
+                    <span class="stat-value">2</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">🎭</span>
+                    <span class="stat-label">Atores/Diretores</span>
+                    <span class="stat-value">10</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">🎪</span>
+                    <span class="stat-label">Gêneros</span>
+                    <span class="stat-value">10</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-label">Nota Média</span>
+                    <span class="stat-value">4.38</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🗺️</span>Modelo de Dados</h2>
+        <div class="content">
+            <h3 class="subsection-title">🗝️ Entidades (Nós)</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>👤 User</h4>
+                    <p>Usuários da plataforma com suas preferências</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎬 Movie</h4>
+                    <p>Filmes disponíveis no catálogo</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📺 Series</h4>
+                    <p>Séries com temporadas e episódios</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎭 Person</h4>
+                    <p>Atores e diretores do cinema</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🎪 Genre</h4>
+                    <p>Gêneros cinematográficos</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">🔗 Relacionamentos</h3>
+
+            <div class="code-block">
+<span class="comment">// Usuários assistem e avaliam</span>
+(<span class="keyword">:User</span>)-[<span class="keyword">:RATED</span> {rating: <span class="string">4.5</span>}]->(<span class="keyword">:Movie</span>)
+
+<span class="comment">// Atores atuam em filmes</span>
+(<span class="keyword">:Person</span>)-[<span class="keyword">:ACTED_IN</span>]->(<span class="keyword">:Movie</span>)
+
+<span class="comment">// Diretores dirigem filmes</span>
+(<span class="keyword">:Person</span>)-[<span class="keyword">:DIRECTED</span>]->(<span class="keyword">:Movie</span>)
+
+<span class="comment">// Filmes têm gêneros</span>
+(<span class="keyword">:Movie</span>)-[<span class="keyword">:HAS_GENRE</span>]->(<span class="keyword">:Genre</span>)
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">💻</span>Como Usar</h2>
+        <div class="content">
+            <h3 class="subsection-title">1. Pré-requisitos</h3>
+            <p>Certifique-se de ter instalado:</p>
+            <ul style="line-height: 2; color: #8b6575; margin-left: 20px;">
+                <li>🖥️ Neo4j Desktop ou Neo4j Aura</li>
+                <li>💻 Cypher Shell ou Neo4j Browser</li>
+                <li>📦 Git instalado</li>
+            </ul>
+
+            <h3 class="subsection-title">2. Clone o Repositório</h3>
+            <div class="code-block">
+git clone git@github.com:nataliaberbetviana/neo4j-movie-knowledge-graph.git
+cd neo4j-movie-knowledge-graph
+            </div>
+
+            <h3 class="subsection-title">3. Configure o Neo4j</h3>
+            <p>1. Abra o <strong>Neo4j Desktop</strong><br>
+            2. Crie um novo banco de dados<br>
+            3. Inicie o banco de dados<br>
+            4. Abra o <strong>Neo4j Browser</strong></p>
+
+            <h3 class="subsection-title">4. Execute os Scripts</h3>
+            <div class="code-block">
+<span class="comment">// 1️⃣ Criar restrições e índices</span>
+<span class="keyword">:source</span> scripts/01_create_constraints.cypher
+
+<span class="comment">// 2️⃣ Criar dados dos CSVs no Neo4J</span>
+<span class="keyword">:source</span> scripts/02_create_data.cypher
+
+<span class="comment">// 3️⃣ Criar relações entre os dados</span>
+<span class="keyword">:source</span> scripts/03_create_relations.cypher
+
+<span class="comment">// 4️⃣ Executar queries de teste</span>
+<span class="keyword">:source</span> scripts/04_test_queries.cypher
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🔍</span>Consultas de Exemplo</h2>
+        <div class="content">
+            <h3 class="subsection-title">📊 Top Filmes Mais Assistidos</h3>
+            <div class="code-block">
+<span class="keyword">MATCH</span> (u:User)-[w:WATCHED]->(m:Movie)
+<span class="keyword">RETURN</span> m.title <span class="keyword">AS</span> Filme,
+       <span class="function">count</span>(w) <span class="keyword">AS</span> TotalVisualizações,
+       <span class="function">avg</span>(w.rating) <span class="keyword">AS</span> AvaliaçãoMédia
+<span class="keyword">ORDER BY</span> TotalVisualizações <span class="keyword">DESC</span>
+<span class="keyword">LIMIT</span> <span class="string">10</span>;
+            </div>
+
+            <h3 class="subsection-title">🎭 Colaborações Frequentes</h3>
+            <div class="code-block">
+<span class="keyword">MATCH</span> (d:Person)-[:DIRECTED]->(m:Media)<-[:ACTED_IN]-(a:Person)
+<span class="keyword">WHERE</span> d.nome = <span class="string">"Christopher Nolan"</span>
+<span class="keyword">WITH</span> a, <span class="function">count</span>(m) <span class="keyword">AS</span> colaborações
+<span class="keyword">WHERE</span> colaborações > <span class="string">1</span>
+<span class="keyword">RETURN</span> a.nome <span class="keyword">AS</span> Ator, colaborações
+<span class="keyword">ORDER BY</span> colaborações <span class="keyword">DESC</span>;
+            </div>
+
+             <h3 class="subsection-title">🌟 Atores Mais Populares</h3>
+            <div class="code-block">
+<span class="keyword">MATCH</span> (p:Person)-[:ACTED_IN]->(m:Media)<-[r:RATED]-(u:User)
+<span class="keyword">WHERE</span> m.tipo = <span class="string">'Movie'</span>
+<span class="keyword">RETURN</span> p.nome <span class="keyword">AS</span> Ator,
+       <span class="function">count</span>(<span class="keyword">DISTINCT</span> m) <span class="keyword">AS</span> Filmes,
+       <span class="function">count</span>(r) <span class="keyword">AS</span> TotalAvaliacoes,
+       <span class="function">avg</span>(r.rating) <span class="keyword">AS</span> AvaliaçãoMédia
+<span class="keyword">ORDER BY</span> TotalAvaliacoes <span class="keyword">DESC</span>
+<span class="keyword">LIMIT</span> <span class="string">10</span>;
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🛠️</span>Tecnologias e Conceitos</h2>
+        <div class="content">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🗄️ Neo4j</h4>
+                    <p>Banco de dados de grafos líder de mercado</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📊 Cypher</h4>
+                    <p>Linguagem declarativa para consultas em grafos</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📈 Análise de Grafos</h4>
+                    <p>Identificação de padrões e relacionamentos</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📦 Git</h4>
+                    <p>Controle de versão e documentação</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">📚 Conceitos Demonstrados</h3>
+            <ul style="line-height: 2; color: #8b6575;">
+                <li><strong>Modelagem de Grafos:</strong> Criação de entidades e relacionamentos complexos</li>
+                <li><strong>Constraints e Índices:</strong> Garantia de integridade dos dados</li>
+                <li><strong>Queries Cypher:</strong> Consultas avançadas com pattern matching</li>
+                <li><strong>Análise de Dados:</strong> Extração de insights e padrões</li>
+                <li><strong>Sistema de Recomendação:</strong> Algoritmos baseados em grafos</li>
+                <li><strong>Importação de Dados:</strong> Carregamento a partir de arquivos CSV</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">📁</span>Estrutura do Projeto</h2>
+        <div class="content">
+            <h3 class="subsection-title">📂 Organização dos Arquivos</h3>
+
+            <div class="feature-card" style="margin-bottom: 20px;">
+                <h4>📊 data/csv/</h4>
+                <ul style="line-height: 1.8; color: #8b6575; margin-left: 20px; margin-top: 10px;">
+                    <li><code>users.csv</code> - Dados dos usuários</li>
+                    <li><code>media.csv</code> - Filmes e séries</li>
+                    <li><code>persons.csv</code> - Atores e diretores</li>
+                    <li><code>genres.csv</code> - Gêneros cinematográficos</li>
+                    <li><code>cast_crew.csv</code> - Elenco e equipe técnica</li>
+                    <li><code>media_genres.csv</code> - Relação mídia-gêneros</li>
+                    <li><code>user_ratings.csv</code> - Avaliações dos usuários</li>
+                </ul>
+            </div>
+
+            <div class="feature-card" style="margin-bottom: 20px;">
+                <h4>⚙️ scripts/</h4>
+                <ul style="line-height: 1.8; color: #8b6575; margin-left: 20px; margin-top: 10px;">
+                    <li><code>01_create_constraints.cypher</code> - Constraints e índices</li>
+                    <li><code>02_create_data.cypher</code> - Criação dos nós</li>
+                    <li><code>03_create_relations.cypher</code> - Criação dos relacionamentos</li>
+                    <li><code>04_test_queries.cypher</code> - Queries de validação</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h4>📚 docs/</h4>
+                <ul style="line-height: 1.8; color: #8b6575; margin-left: 20px; margin-top: 10px;">
+                    <li><code>bloom-visualisation.png</code> - Visualização do grafo</li>
+                    <li><code>exemplos_queries.md</code> - Exemplos de consultas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="paper-section">
+        <h2><span class="section-icon">🎓</span>Aprendizados</h2>
+        <div class="content">
+            <p>Este projeto demonstra habilidades avançadas em <strong>modelagem de dados não-relacionais</strong> utilizando banco de dados de grafos. A estrutura permite análises complexas de relacionamentos que seriam difíceis ou ineficientes em bancos relacionais tradicionais.</p>
+
+            <div class="highlight-box">
+                <p>Desenvolvido como parte do Bootcamp Neo4j pela DIO, este projeto representa domínio em análise de dados com grafos, modelagem de relacionamentos complexos e criação de sistemas de recomendação inteligentes.</p>
+            </div>
+
+            <h3 class="subsection-title">✨ Destaques do Projeto</h3>
+            <ul style="line-height: 2; color: #8b6575;">
+                <li>✅ Sistema completo de avaliações (ratings de 0 a 5)</li>
+                <li>✅ Recomendações baseadas em preferências de gênero</li>
+                <li>✅ Análise de padrões de visualização e colaboração</li>
+                <li>✅ Identificação de colaborações frequentes entre diretores e atores</li>
+                <li>✅ Rankings de popularidade e média de avaliações</li>
+                <li>✅ Queries otimizadas com índices e constraints</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="stamp">
+            ✉ ENTRE EM CONTATO
+        </div>
+        <p>Gostou do projeto? Vamos conversar!</p>
+        <div class="contact-links">
+            <a href="mailto:nabevia@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/nataliaberbetviana/">LinkedIn</a>
+            <a href="https://github.com/nataliaberbetviana">GitHub</a>
+            <a href="https://wa.me/5528999091402" target="_blank">WhatsApp</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
